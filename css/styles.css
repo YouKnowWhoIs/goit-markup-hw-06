@@ -110,8 +110,8 @@ section {
 }
 /* ============ header-menu-start ============ */
 .header-menu-form {
-  width: 320px;
-  height: 640px;
+  width: 100%;
+  height: 100%;
   z-index: 1;
   padding-left: 16px;
   opacity: 0;
@@ -119,9 +119,11 @@ section {
   pointer-events: none;
   background: #fff;
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -56%);
+  top: 0;
+  left: 0;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .header-menu-close {
@@ -178,7 +180,7 @@ section {
   flex-direction: column;
   flex-wrap: wrap;
   row-gap: 24px;
-  padding-top: 168px;
+  margin-top: auto;
 }
 
 .header-menu-address-ul-icon {
@@ -254,6 +256,16 @@ section {
   background-size: cover;
   margin: 0 auto;
 }
+@media (min-resolution: 192dpi) {
+  .main-title {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/Dark-bg-tel@2x.jpg);
+  }
+}
 
 button {
   background-color: #4d5ae5;
@@ -292,6 +304,9 @@ button:focus {
   line-height: 1.11; /* 111.111% */
   letter-spacing: 0.72px;
   text-transform: capitalize;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .main-p {
@@ -509,7 +524,6 @@ button:focus {
 }
 
 .footer-social-media {
-  margin-bottom: 72px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -568,6 +582,7 @@ button:focus {
 
 /* ============ foooter form ============*/
 .footer_form {
+  margin-top: 72px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -933,12 +948,19 @@ button:focus {
         rgba(46, 47, 66, 0.7),
         rgba(46, 47, 66, 0.7)
       ),
-      image-set(
-        url(../images/Dark-bg-tablet.jpg) 1x,
-        url(../images/Dark-bg-tablet@2x.jpg) 2x
-      );
+      url(../images/Dark-bg-tablet.jpg);
     max-width: 768px;
     padding: 112px 0;
+  }
+  @media (min-resolution: 192dpi) {
+    .main-title {
+      background-image: linear-gradient(
+          to bottom,
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/Dark-bg-tablet@2x.jpg);
+    }
   }
 
   .one-h {
@@ -1056,7 +1078,7 @@ button:focus {
   }
 
   .footer_form {
-    padding-top: 72px;
+    margin-top: 72px;
     align-items: start;
   }
 
@@ -1117,7 +1139,6 @@ button:focus {
 
   .header-logo {
     margin-right: 76px;
-    margin-left: 156px;
     display: flex;
   }
 
@@ -1158,7 +1179,6 @@ button:focus {
     line-height: 1.5;
     font-style: normal;
     margin-left: auto;
-    margin-right: 156px;
     padding: 0;
   }
   .list-header-address {
@@ -1194,21 +1214,20 @@ button:focus {
         rgba(46, 47, 66, 0.7),
         rgba(46, 47, 66, 0.7)
       ),
-      image-set(
-        url(../images/people-office.jpg) 1x,
-        url(../images/people-office@2x.jpg) 2x
-      );
+      url(../images/people-office.jpg);
     max-width: 1440px;
     padding: 188px 0;
   }
-  /* другий спосіб зробити backround-image видалити 1х і х2 залишити
-  тільки 1-ший url без image-set і зробити так: 
   @media (min-resolution: 192dpi) {
     .main-title {
-       background-image: url(../images/people-office@2x.jpg);
+      background-image: linear-gradient(
+          to bottom,
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/Dark-bg-tablet@2x.jpg);
     }
   }
-  */
 
   .one-h {
     line-height: 1.07;
